@@ -1,0 +1,135 @@
+/* Styles globaux */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+/* Style pour le header */
+.header {
+    position: absolute; 
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    padding: 20px 0;
+    background-color: black; 
+    z-index: 100;
+}
+
+/* Styles pour la navbar */
+.navbar {
+    display: flex; 
+    list-style: none; 
+    padding: 0; 
+    margin: 0;
+    gap: 40px;
+}
+
+.navbar a {
+    font-size: 25px;
+    color: #ffffff;
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    transition: width 0.3s;
+}
+
+.navbar a:hover::before,
+.navbar a.active::before {
+    width: 100%; /* Soulignement permanent pour le lien actif */
+}
+
+/* Style de la photographe */
+.main-header {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 20px; 
+    margin-top: 100px; 
+}
+
+.logo {
+    width: 250px; /* Taille ajustée du logo */
+    object-fit: cover;
+}
+
+.text {
+    font-size: 50px;
+}
+/* Style pour l'album */
+.album {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 20px;
+    margin-top: 25px;
+}
+
+/* Styles pour les photos et les descriptions */
+.photo-container {
+    position: relative;
+    width: 45%;
+    max-width: 500px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.photo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.photo-gauche, .photo-droite {
+    width: 100%; /* Assure une largeur responsive dans le conteneur */
+    max-width: 500px;
+    object-fit: cover;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding-bottom: 40px;
+}
+
+.photo-container:hover {
+    transform: scale(1.04);
+}
+
+/* Centrer le texte de description */
+.description {
+    position: absolute;
+    bottom: 10px; /* Ajuste la position pour être en bas */
+    width: 100%;
+    text-align: center;
+    font-size: 23px;
+    color: #000000;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .album {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

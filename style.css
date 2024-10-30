@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+/* Style pour le header */
+.header {
+    position: absolute; 
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    padding: 20px 0;
+    background-color: black; 
+    z-index: 100;
+}
+
+/* Styles pour la navbar */
+.navbar {
+    display: flex; 
+    list-style: none; 
+    padding: 0; 
+    margin: 0;
+    gap: 40px;
+}
+
+.navbar a {
+    font-size: 25px;
+    color: #ffffff;
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    transition: width 0.3s;
+}
+
+.navbar a:hover::before,
+.navbar a.active::before {
+    width: 100%; /* Soulignement permanent pour le lien actif */
+}
+
+/* Style de la section principale */
+.main-header {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 20px; /* Espace entre le logo et la photo */
+    margin-top: 100px; /* Espace entre la navbar et le logo augmenté */
+}
+
+.logo {
+    width: 250px; /* Taille ajustée du logo */
+    object-fit: cover;
+}
+
+.text {
+    font-size: 50px;
+}
+
+/* Style pour la photo avec contour et espace */
+.photo-droite {
+    width: 80%; /* Adapte la taille de l'image à 80% de la largeur du conteneur */
+    max-width: 1000px; /* Limite la largeur maximale */
+    object-fit: cover;
+    padding: 15px; /* Espace entre la photo et le contour */
+    background-color: white; /* Couleur de fond pour le contour */
+    box-shadow: 0 0 0 5px black; /* Contour noir */
+    margin: 0 auto; /* Centre l'image horizontalement */
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; 
+    padding: 20px;
+}
+
+.logos a {
+    margin: 0 15px; 
+    transition: transform 0.3s ease; 
+}
+
+.logos a:hover {
+    transform: scale(1.1); 
+}
+
+.logos img {
+    width: 30px; 
+    height: auto;
+    border-radius: 10px; 
+}
